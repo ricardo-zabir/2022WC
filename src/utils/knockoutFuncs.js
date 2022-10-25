@@ -31,7 +31,7 @@ const readline = __importStar(require("readline-sync"));
 const Game_1 = __importDefault(require("../Game"));
 const knockoutLog = (teams, phase) => {
     console.log(phase);
-    for (let i = 0; i < teams.length / 2; i += 2) {
+    for (let i = 0; i < teams.length; i += 2) {
         console.log(`${teams[i].name} x ${teams[i + 1].name}`);
     }
     console.log();

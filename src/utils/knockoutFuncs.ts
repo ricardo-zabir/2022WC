@@ -5,7 +5,7 @@ import Game from "../Game"
 
 const knockoutLog = (teams: Team[], phase: string) => {
     console.log(phase)
-    for(let i = 0; i < teams.length / 2; i += 2) {
+    for(let i = 0; i < teams.length; i += 2) {
         console.log(`${teams[i].name} x ${teams[i + 1].name}`)
     }
     console.log()
