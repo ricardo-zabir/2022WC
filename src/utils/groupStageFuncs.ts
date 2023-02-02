@@ -4,15 +4,18 @@ import * as readline from 'readline-sync'
 import Game from "../Game";
 
 const matchUpGroupStage = (group: Group, teamA: Team, teamB: Team, round: number) => {
-    console.log(`Rodada ${round}: Grupo ${group.name}
-    Próxima partida:
+    console.log(`Round ${round}: Group ${group.name}
+    Next match:
     ${teamA.name} x ${teamB.name}`);
-    readline.question('');
+    readline.question('Press enter to continue');
+    console.clear()
     const game = new Game(teamA, teamB, false);
     game.on();
-    readline.question('');
+    readline.question('Press enter to continue');
+    console.clear()
     console.log(group.toString());
-    readline.question('')
+    readline.question('Press enter to continue');
+    console.clear()
 }
 
 export const firstRound = (groups: Group[]) => {
@@ -20,20 +23,22 @@ export const firstRound = (groups: Group[]) => {
         matchUpGroupStage(groups[i], groups[i].teams[0], groups[i].teams[1], 1)
         matchUpGroupStage(groups[i], groups[i].teams[2], groups[i].teams[3], 1)
     }
-    console.log('Fim primeira rodada');
-    readline.question('');
+    console.log('End of first round');
+    readline.question('Press enter to continue');
+    console.clear()
     for(let i = 0; i < 8; i ++) {
         matchUpGroupStage(groups[i], groups[i].teams[0], groups[i].teams[2], 2)
         matchUpGroupStage(groups[i], groups[i].teams[1], groups[i].teams[3], 2)
     }
-    console.log('Fim segunda rodada');
-    readline.question('');
+    console.log('End of second round');
+    readline.question('Press enter to continue');
+    console.clear()
     for(let i = 0; i < 8; i ++) {
         matchUpGroupStage(groups[i], groups[i].teams[0], groups[i].teams[3], 3)
         matchUpGroupStage(groups[i], groups[i].teams[1], groups[i].teams[2], 3)
     }
-    console.log('Fim fase de grupos');
-    console.log('Oitavas de finais: ');
+    console.log('End of group stage');
+    console.log('Round of 16: ');
     console.log(`
     ${groups[0].first.name} x ${groups[1].second.name}
     ${groups[2].first.name} x ${groups[3].second.name}

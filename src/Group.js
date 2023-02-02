@@ -20,7 +20,7 @@ class Group {
     }
     toString() {
         this.groupStanding();
-        return `GRUPO ${this._name}:
+        return `GROUP ${this._name}:
         1- ${this._sortedTeams[0].name} ${this._sortedTeams[0].points} GD: ${this._sortedTeams[0].gd}
         2- ${this._sortedTeams[1].name} ${this._sortedTeams[1].points} GD: ${this._sortedTeams[1].gd}
         ---------------------------------------------------------------------------

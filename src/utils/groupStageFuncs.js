@@ -30,35 +30,40 @@ exports.firstRound = void 0;
 const readline = __importStar(require("readline-sync"));
 const Game_1 = __importDefault(require("../Game"));
 const matchUpGroupStage = (group, teamA, teamB, round) => {
-    console.log(`Rodada ${round}: Grupo ${group.name}
-    Próxima partida:
+    console.log(`Round ${round}: Group ${group.name}
+    Next match:
     ${teamA.name} x ${teamB.name}`);
-    readline.question('');
+    readline.question('Press enter to continue');
+    console.clear();
     const game = new Game_1.default(teamA, teamB, false);
     game.on();
-    readline.question('');
+    readline.question('Press enter to continue');
+    console.clear();
     console.log(group.toString());
-    readline.question('');
+    readline.question('Press enter to continue');
+    console.clear();
 };
 const firstRound = (groups) => {
     for (let i = 0; i < 8; i++) {
         matchUpGroupStage(groups[i], groups[i].teams[0], groups[i].teams[1], 1);
         matchUpGroupStage(groups[i], groups[i].teams[2], groups[i].teams[3], 1);
     }
-    console.log('Fim primeira rodada');
-    readline.question('');
+    console.log('End of first round');
+    readline.question('Press enter to continue');
+    console.clear();
     for (let i = 0; i < 8; i++) {
         matchUpGroupStage(groups[i], groups[i].teams[0], groups[i].teams[2], 2);
         matchUpGroupStage(groups[i], groups[i].teams[1], groups[i].teams[3], 2);
     }
-    console.log('Fim segunda rodada');
-    readline.question('');
+    console.log('End of second round');
+    readline.question('Press enter to continue');
+    console.clear();
     for (let i = 0; i < 8; i++) {
         matchUpGroupStage(groups[i], groups[i].teams[0], groups[i].teams[3], 3);
         matchUpGroupStage(groups[i], groups[i].teams[1], groups[i].teams[2], 3);
     }
-    console.log('Fim fase de grupos');
-    console.log('Oitavas de finais: ');
+    console.log('End of group stage');
+    console.log('Round of 16: ');
     console.log(`
     ${groups[0].first.name} x ${groups[1].second.name}
     ${groups[2].first.name} x ${groups[3].second.name}
