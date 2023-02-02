@@ -58,7 +58,7 @@ const KOStage = (groups) => {
         roundOf16.push(matchUpKoStage(groups[i].first, groups[i + 1].second, 'Round of 16'));
     }
     for (let i = 1; i < 8; i += 2) {
-        roundOf16.push(matchUpKoStage(groups[i].first, groups[i - 1].second, 'Quarterfinals'));
+        roundOf16.push(matchUpKoStage(groups[i].first, groups[i - 1].second, 'Round of 16'));
     }
     knockoutLog(roundOf16, 'Quarterfinals: ');
     const quarterfinals = [matchUpKoStage(roundOf16[0], roundOf16[1], 'Quarterfinals'), matchUpKoStage(roundOf16[2], roundOf16[3], 'Quarterfinals'),
